@@ -1,0 +1,7 @@
+@echo off
+REM Wait for 5 seconds to ensure the desktop is loaded
+timeout /t 5 /nobreak > NUL
+
+REM Launch Microsoft Edge in Kiosk mode
+echo "Launching Edge in Kiosk mode..."
+start "EdgeKiosk" "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --kiosk "https://meet.christardy.com/JointFeversTranslateAlso"

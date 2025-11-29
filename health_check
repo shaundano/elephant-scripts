@@ -1,0 +1,13 @@
+# --- 1. WARM UP .NET ---
+Write-Output "Warming up .NET Framework..."
+Get-Service | Where-Object { $_.Status -eq 'Running' } | Out-Null
+
+# --- 2. ACTIVATE CONDA ---
+# This ensures DLL paths (Library\bin) are added to the environment
+Write-Output "Activating Conda Environment..."
+conda activate ocap-env
+
+# --- 3. RUN PYTHON LOGIC ---
+# Now that we are activated, 'python' resolves to the ocap-env python
+Write-Output "Running Library Warm-up and DB Check..."
+python "C:\scripts\update_health.py"
